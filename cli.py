@@ -4,8 +4,9 @@ import pandas
 from helpers import *
 from constants import *
 from extract import *
-from report import *
-from integrity import *
+from report import update_report
+from integrity import check_integrity_and_convert, review_data
+from combine import combine_reports
 
 
 @click.group()
@@ -21,43 +22,53 @@ def extract():
 
 
 @click.command()
-@click.option('--slug', default=None, help='Slug of the report to update')
-@click.option('--all', is_flag=True, help='Update all reports')
-def update(slug, all=False):
-    """This command updates a report"""
-    if all and slug:
-        click.echo('Either --all or --slug must be provided, not both.')
-        return
-    if all:
-        for report_slug in report_slugs:
+@click.argument('slug')
+def update(slug):
+    """Attempts to update a report with new data"""
+    if slug == 'all':
+        for report_slug in REPORT_SLUGS:
             print(f'Updating {report_slug}')
             update_report(report_slug)
-    elif slug:
-        update_report(slug)
     else:
-        click.echo('Either --all or --slug must be provided.')
+        update_report(slug)
 
 
 @click.command()
 @click.argument('slug')
 def review(slug):
-    """This command reviews a report"""
+    """Prints data on a report"""
     df = load_report_data(slug)
     review_data(df)
-    pass
 
 
 @click.command()
-def load():
-    """This command loads data"""
-    # Your loading code here
-    pass
+@click.argument('slug')
+def convert(slug):
+    """Checks the integrity of a report and converts it to the correct format"""
+    if slug == 'all':
+        for report_slug in REPORT_SLUGS:
+            data = load_report_data(report_slug)
+            data = check_integrity_and_convert(data)
+            save_report_data(report_slug, data)
+            print(f'Integrity check complete for {report_slug}')
+    else:
+        data = load_report_data(slug)
+        data = check_integrity_and_convert(data)
+        save_report_data(slug, data)
+        print(f'Integrity check complete for {slug}')
 
 
+@click.command()
+def combine():
+    """Loads all reports for analysis"""
+    combine_reports()
+
+
+cli.add_command(extract)
 cli.add_command(update)
-
 cli.add_command(review)
-cli.add_command(load)
+cli.add_command(convert)
+cli.add_command(combine)
 
 if __name__ == "__main__":
     cli()

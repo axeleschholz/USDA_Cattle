@@ -1,5 +1,6 @@
 import pandas
 import requests
+import sys
 
 
 def retrieve_data_raw(slug, start_date, end_date):
@@ -17,7 +18,13 @@ def retrieve_report_instances(report, month, year):
 
 
 def load_report_data(slug):
-    return pandas.read_csv(f'data_silos/{slug}_data.csv')
+    try:
+        data = pandas.read_csv(f'data_silos/{slug}_data.csv')
+    except:
+        print(f"Data for report {slug} does not exist")
+        sys.exit(1)
+
+    return data
 
 
 def save_report_data(slug, data: pandas.DataFrame):

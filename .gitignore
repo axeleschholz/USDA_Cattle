@@ -5,3 +5,4 @@
 
 .venv/Lib/
 fulldata.csv
+__pycache__/
