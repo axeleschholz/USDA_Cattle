@@ -1,5 +1,5 @@
 
-DROPPED_ATTRIBUTES = ['report_narrative', 'group', 'category', 'comments_commodity',
+DROPPED_ATTRIBUTES = ['group', 'category', 'comments_commodity',
                       'market_location_name', 'market_location_city',
                       'market_location_state', 'market_type',
                       'market_type_category', 'report_narrative', 'office_code',

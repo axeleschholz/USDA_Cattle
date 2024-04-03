@@ -4,7 +4,7 @@ import sys
 
 
 def retrieve_data_raw(slug, start_date, end_date):
-    url = f'https://marsapi.ams.usda.gov/services/v1.2/reports/{slug}?q=report_begin_date={start_date}:{end_date}'
+    url = f'https://marsapi.ams.usda.gov/services/v1.2/reports/{slug}?q=report_end_date={start_date}:{end_date}'
     response = requests.get(url, auth=('7XWk8PBs9+OacpqUItFCYTpfnq8yCqSS', ''))
     data = response.json()
     return data
