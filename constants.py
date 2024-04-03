@@ -19,3 +19,7 @@ STORED_COLUMNS = ['report_date', 'report_begin_date', 'report_end_date', 'publis
                   'avg_weight_min', 'avg_weight_max', 'avg_weight', 'avg_price_min',
                   'avg_price_max', 'avg_price', 'weight_break_low', 'weight_break_high',
                   'receipts', 'receipts_week_ago', 'receipts_year_ago', 'final_ind']
+
+PRICE_COLUMNS = ['avg_price_min', 'avg_price_max', 'avg_price']
+DATE_COLUMNS = ['report_date', 'report_begin_date',
+                'report_end_date', 'published_date']
