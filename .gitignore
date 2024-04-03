@@ -1,0 +1,7 @@
+*~
+
+*.swp
+*.swo
+
+.venv/Lib/
+fulldata.csv
