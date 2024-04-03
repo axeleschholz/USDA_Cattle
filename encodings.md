@@ -1,5 +1,6 @@
 ## office_state
 | --- | --- | --- |
+| --- | --- | --- |
 | [0] MS  | [1] AL  | [2] AR  |
 
 | [3] PA  | [4] KY  | [5] WV  |
@@ -20,6 +21,7 @@
 
 ## commodity
 | --- | --- | --- |
+| --- | --- | --- |
 | [0] Feeder Cattle            | [1] Slaughter Cattle         | [2] Replacement Cattle       |
 
 | [3] Feeder Dairy Calves      | [4] Slaughter Goats          | [5] Replacement Dairy Cattle |
@@ -31,6 +33,7 @@
 | [12] Replacement Sheep/Lambs |
 
 ## class
+| --- | --- | --- |
 | --- | --- | --- |
 | [0] Bulls               | [1] Steers              | [2] Cows                |
 
@@ -60,11 +63,13 @@
 
 ## frame
 | --- | --- | --- |
+| --- | --- | --- |
 | [0] Medium and Large | [1] Small and Medium | [2] Large            |
 
 | [3] Medium           | [4] Small            |
 
 ## muscle_grade
+| --- | --- | --- |
 | --- | --- | --- |
 | [0] 2   | [1] 1-2 | [2] 1   |
 
@@ -73,6 +78,7 @@
 | [6] 4   |
 
 ## quality_grade_name
+| --- | --- | --- |
 | --- | --- | --- |
 | [0] Lean 85-90%          | [1] Boner 80-85%         | [2] Breaker 75-80%       |
 
@@ -95,6 +101,7 @@
 | [27] Approved            | [28] Medium              |
 
 ## lot_desc
+| --- | --- | --- |
 | --- | --- | --- |
 | [0] Fleshy             | [1] Fancy              | [2] Heavy Weight       |
 
@@ -132,15 +139,18 @@
 
 ## freight
 | --- | --- | --- |
+| --- | --- | --- |
 | [0] F.O.B. |
 
 ## price_unit
+| --- | --- | --- |
 | --- | --- | --- |
 | [0] Per Cwt    | [1] Per Head   | [2] Per Family |
 
 | [3] Per Unit   |
 
 ## age
+| --- | --- | --- |
 | --- | --- | --- |
 | [0] Middle Aged (5-8 yrs)       | [1] Young (2-4 yrs)             | [2] Young/Middle Aged (2-8 yrs) |
 
@@ -152,6 +162,7 @@
 
 ## pregnancy_stage
 | --- | --- | --- |
+| --- | --- | --- |
 | [0] 1st Stage (1-3 mo)     | [1] Open                   | [2] 3rd Stage (7-9 mo)     |
 
 | [3] 2nd Stage (4-6 mo)     | [4] 2nd/3rd Stage (4-9 mo) | [5] 1st/2nd Stage (1-6 mo) |
@@ -162,9 +173,11 @@
 
 ## weight_collect
 | --- | --- | --- |
+| --- | --- | --- |
 | [0] Actual   | [1] N/C      | [2] Estimate |
 
 ## offspring_weight_est
+| --- | --- | --- |
 | --- | --- | --- |
 | [0] <150      | [1] 150-300   | [2] >300      |
 
@@ -172,11 +185,13 @@
 
 ## dressing
 | --- | --- | --- |
+| --- | --- | --- |
 | [0] High     | [1] Average  | [2] Low      |
 
 | [3] Very Low |
 
 ## yield_grade
+| --- | --- | --- |
 | --- | --- | --- |
 | [0] 1-2       | [1] 1         | [2] 3         |
 
