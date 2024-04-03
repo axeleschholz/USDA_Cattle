@@ -20,8 +20,8 @@ for key, values in encodings.items():
     md_content += '| ' + ' | '.join('---' for _ in range(num_columns)) + ' |\n'
     for i in range(0, len(values), num_columns):
         row_values = values[i:i+num_columns]
-        md_content += '|' + '|'.join(f'[{i+j}] {value}'.ljust(
-            max_lengths[j]) for j, value in enumerate(row_values)) + '|\n'
+        md_content += '| ' + ' | '.join(f'[{i+j}] {value}'.ljust(
+            max_lengths[j]) for j, value in enumerate(row_values)) + ' |\n'
         md_content += '\n'
 
 # Write the Markdown content to a file
