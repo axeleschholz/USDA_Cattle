@@ -27,8 +27,6 @@ def clean_nan(df):
 def pca_selection(df):
     data = clean_nan(df)
     X_standardized = StandardScaler().fit_transform(data)
-
-    # Applying PCA
     pca = PCA(n_components=2)
     X_pca = pca.fit_transform(X_standardized)
 
@@ -46,16 +44,10 @@ def linear_regression(X, y):
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42)
 
-    # Create a LinearRegression object
     lr = LinearRegression()
 
-    # Fit the model to the training data
     lr.fit(X_train, y_train)
-
-    # Predict the target variable for the test data
     y_pred = lr.predict(X_test)
-
-    # Calculate the mean squared error of the predictions
     mse = mean_squared_error(y_test, y_pred)
     r2 = lr.score(X_test, y_test)
 
@@ -65,27 +57,10 @@ def linear_regression(X, y):
     return lr
 
 
-def random_forest(X, y):
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, random_state=42)
-
-    # Training a classifier, for example, a random forest classifier
-    classifier = RandomForestClassifier(n_estimators=100, random_state=42)
-    classifier.fit(X_train, y_train)
-
-    # Predicting the class for the test set
-    y_pred = classifier.predict(X_test)
-
-    # Evaluating the classifier
-    accuracy = accuracy_score(y_test, y_pred)
-    print(f'Accuracy: {accuracy}')
-
-
 # run
 df = pd.read_csv('fulldata.csv')
 X = df.drop(PRICE_COLUMNS+DATE_COLUMNS, axis=1)
 y = df['avg_price']
 X_pca = pca_selection(X)
-# std_X = StandardScaler().fit_transform(clean_nan(X))
-# linear_regression(std_X, y)
-random_forest(X_pca, y)
+std_X = StandardScaler().fit_transform(clean_nan(X))
+linear_regression(X_pca, y)
